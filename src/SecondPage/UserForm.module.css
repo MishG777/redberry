@@ -1,0 +1,89 @@
+/* ====================FORM==================== */
+.mainForm {
+  margin-left: 50%;
+  transform: translate(-51%);
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
+  justify-content: space-around;
+  height: 48rem;
+  background-color: white;
+  border: none;
+  border-radius: 18px;
+}
+.nameSurname {
+  width: 82%;
+  display: flex;
+  justify-content: space-between;
+}
+.nmsr {
+  width: 30rem;
+  height: 6.5rem;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.mailNum {
+  width: 82%;
+  height: 6.5rem;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nmsr span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.selectTheme {
+  width: 100%;
+  height: 60px;
+  background: #ebebeb;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+
+.selects {
+  width: 82%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 14rem;
+}
+
+.mailInp,
+.telInp {
+  width: 100%;
+}
+
+.mailNum span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.nextBtn {
+  width: 82%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5rem;
+}
+
+.btn {
+  width: 10rem;
+}

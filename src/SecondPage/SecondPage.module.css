@@ -20,6 +20,7 @@
   color: #232323;
   cursor: pointer;
   background-color: white;
+  background-color: #ebe4e4e5;
 }
 .customerInfo2 {
   font-weight: 700;
@@ -28,92 +29,29 @@
   color: #232323;
   cursor: pointer;
   background-color: white;
+  background-color: #ebe4e4e5;
 }
 
 .customerInfo::after {
   content: "";
   position: absolute;
-  transition: all 1s ease;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   height: 3px;
   background-color: black;
   bottom: -10px;
-  width: 100%;
+  width: 80%;
 }
-
-/* .customerInfo:hover::after {
-  width: 100%;
-} */
 
 .backBtn {
   margin: 10px;
+  width: 3rem;
+  font-size: 0.8rem;
+  height: auto;
+  font-family: "Helvetica Neue";
 }
 
-/* ====================FORM==================== */
-.mainForm {
-  margin-left: 50%;
-  transform: translate(-51%);
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  justify-content: space-evenly;
-  border: 2px solid green;
-  height: 50rem;
-}
-
-.nmsr {
-  width: 35rem;
-  height: 6.5rem;
-  border: 2px solid red;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.mailNum {
-  width: 50rem;
-  height: 6.5rem;
-  border: 2px solid red;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.nmsr span {
-  font-weight: bold;
-}
-
-text {
-  font-size: 10px;
-}
-
-.selectTheme {
-  width: 878px;
-  height: 60px;
-  background: #ebebeb;
-  border-radius: 8px;
-  font-weight: bold;
-  color: black;
-  font-size: 18px;
-  border: none;
-  outline: none;
-}
-
-.selects {
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  border: 2px solid orange;
-  height: 15rem;
-}
-
-.mailInp,
-.telInp {
-  width: 50rem;
-}
-
-.btn {
-  width: 10rem;
+.mainBackground {
+  background-color: #ebe4e4e5;
+  height: 100vh;
 }
