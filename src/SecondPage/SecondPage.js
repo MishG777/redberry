@@ -18,6 +18,7 @@ const SecondPage = (props) => {
   };
   // fetchapi------------------------------------------------
   const fetchTeamsHandler = useCallback(async () => {
+    setError(null);
     try {
       const response = await fetch(
         "https://pcfy.redberryinternship.ge/api/teams"
@@ -43,7 +44,7 @@ const SecondPage = (props) => {
     fetchTeamsHandler();
   }, [fetchTeamsHandler]);
 
-  // fetchapi------------------------------------------------
+  // fetchApi------------------------------------------------
 
   return (
     <div className={classes.mainBackground}>

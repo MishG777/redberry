@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import classes from "./UserForm.module.css";
 
 const UserForm = (props) => {
-  //   console.log(props.teams);
-  const team = props.teams;
+  // console.log(props.teams);
+  const [choose, setChoose] = useState("klee");
 
-  console.log(team[0].name);
+  const chosenOption = (e) => {
+    setChoose(e.target.value);
+  };
+  console.log(choose);
 
   return (
     <form className={classes.mainForm}>
@@ -25,15 +28,22 @@ const UserForm = (props) => {
         </label>
       </div>
 
-      <div className={classes.selects}>
-        <select className={classes.selectTheme} onClick={props.teamsFunc}>
+      <div className={classes.selects} onChange={chosenOption}>
+        <select
+          className={classes.selectTheme}
+          onClick={props.teamsFunc}
+          id="select1"
+        >
           <option value="0">თიმი</option>
-          <option value="1">{}</option>
-          <option value="2">{}</option>
-          <option value="2">{}</option>
-          <option value="2">{}</option>
-          <option value="2">{}</option>
+          {props.teams.map((team) => {
+            return (
+              <option key={team.id} value={team.name}>
+                {team.name}
+              </option>
+            );
+          })}
         </select>
+        <h2>{choose}</h2>
 
         <select className={classes.selectTheme}>
           <option value="0">პოზიცია</option>
