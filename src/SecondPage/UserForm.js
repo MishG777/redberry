@@ -4,13 +4,16 @@ import Input from "../UI/Input";
 import classes from "./UserForm.module.css";
 
 const UserForm = (props) => {
-  // console.log(props.teams);
-  const [choose, setChoose] = useState("klee");
+  const [selectedTeam, setselectedTeam] = useState(null);
+  const [selectedPosition, setSelectedPosition] = useState(null);
 
-  const chosenOption = (e) => {
-    setChoose(e.target.value);
+  const chooseTeam = (e) => {
+    setselectedTeam(e.target.value);
   };
-  console.log(choose);
+
+  const choosePosition = (e) => {
+    setSelectedPosition(e.target.value);
+  };
 
   return (
     <form className={classes.mainForm}>
@@ -28,13 +31,14 @@ const UserForm = (props) => {
         </label>
       </div>
 
-      <div className={classes.selects} onChange={chosenOption}>
+      <div className={classes.selects}>
         <select
           className={classes.selectTheme}
           onClick={props.teamsFunc}
           id="select1"
+          onChange={chooseTeam}
         >
-          <option value="0">თიმი</option>
+          <option value="">თიმი</option>
           {props.teams.map((team) => {
             return (
               <option key={team.id} value={team.name}>
@@ -43,13 +47,19 @@ const UserForm = (props) => {
             );
           })}
         </select>
-        <h2>{choose}</h2>
+        <h2>{selectedTeam}</h2>
 
-        <select className={classes.selectTheme}>
-          <option value="0">პოზიცია</option>
-          <option value="1">Audi</option>
-          <option value="2">BMW</option>
+        <select className={classes.selectTheme} onChange={choosePosition}>
+          <option value="">პოზიცია</option>
+          {props.position.map((positionData) => {
+            return (
+              <option key={positionData.id} value={positionData.name}>
+                {positionData.name}
+              </option>
+            );
+          })}
         </select>
+        <h2>{selectedPosition}</h2>
       </div>
 
       <label htmlFor="name" className={classes.mailNum}>

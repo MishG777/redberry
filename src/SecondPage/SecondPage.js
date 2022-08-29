@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import UserForm from "./UserForm";
+import LaptopForm from "./LaptopForm";
 
 import classes from "./SecondPage.module.css";
 import Button from "../UI/Button";
@@ -7,6 +8,7 @@ import Button from "../UI/Button";
 const SecondPage = (props) => {
   const [change, setChange] = useState(false);
   const [teams, setTeams] = useState([]);
+  const [Position, setPosition] = useState([]);
   const [error, setError] = useState(null);
 
   const switchHandler = () => {
@@ -23,10 +25,14 @@ const SecondPage = (props) => {
       const response = await fetch(
         "https://pcfy.redberryinternship.ge/api/teams"
       );
-      if (!response.ok) {
+      const response1 = await fetch(
+        "https://pcfy.redberryinternship.ge/api/positions"
+      );
+      if (!response.ok || !response1.ok) {
         throw new Error("Something went wrong!");
       }
       const data = await response.json();
+      const data1 = await response1.json();
 
       const transformedTeams = data.data.map((teamsData) => {
         return {
@@ -34,7 +40,15 @@ const SecondPage = (props) => {
           name: teamsData.name,
         };
       });
+      const transformedpositions = data1.data.map((positionData) => {
+        return {
+          id: positionData.id,
+          name: positionData.name,
+        };
+      });
+
       setTeams(transformedTeams);
+      setPosition(transformedpositions);
     } catch (error) {
       setError(error.message);
     }
@@ -80,9 +94,10 @@ const SecondPage = (props) => {
           compData={aboutCompHandler}
           teamsFunc={fetchTeamsHandler}
           teams={teams}
+          position={Position}
         />
       )}
-      {/* {change && <CompForm/>} */}
+      {change && <LaptopForm />}
       <section>{error}</section>
     </div>
   );
