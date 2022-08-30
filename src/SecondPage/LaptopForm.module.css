@@ -2,10 +2,10 @@
   margin-left: 50%;
   transform: translate(-51%);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 65%;
-  justify-content: space-around;
-  height: 48rem;
+  align-items: center;
+  height: 90rem;
   background-color: white;
   border: none;
   border-radius: 18px;
@@ -13,7 +13,7 @@
 
 .uploadPhoto {
   display: flex;
-  width: 70%;
+  width: 65%;
   height: 20rem;
   justify-content: space-evenly;
   align-items: center;
@@ -55,4 +55,61 @@
   outline: none;
   cursor: pointer;
   z-index: 9;
+}
+
+.laptopName {
+  width: 380px;
+}
+.mainLaptName {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameBrand {
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
+  align-items: center;
+}
+.selectBrand {
+  width: 400px;
+  height: 48px;
+  border-radius: 8px;
+  background: #ebebeb;
+  outline: none;
+  border: none;
+}
+
+.mainCPU {
+  display: flex;
+  align-items: center;
+  width: 65%;
+  justify-content: space-between;
+}
+.line1 {
+  border: 1px solid green;
+  width: 65%;
+}
+
+.coreInput {
+  width: 250px;
+}
+
+.core {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectCPU {
+  width: 277px;
+  height: 48px;
+  border-radius: 8px;
+  background: #ebebeb;
+  outline: none;
+  border: none;
+}
+
+label span {
+  font-weight: bold;
+  font-size: 0.9rem;
 }
