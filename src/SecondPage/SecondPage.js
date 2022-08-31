@@ -97,7 +97,7 @@ const SecondPage = (props) => {
           position={Position}
         />
       )}
-      {change && <LaptopForm />}
+      {change && <LaptopForm forBackButton={switchHandler} />}
       <section>{error}</section>
     </div>
   );

@@ -1,19 +1,18 @@
 .mainForm {
-  margin-left: 50%;
-  transform: translate(-51%);
+  margin: auto;
   display: flex;
   flex-direction: column;
   width: 65%;
   align-items: center;
-  height: 90rem;
+  height: 80rem;
   background-color: white;
-  border: none;
   border-radius: 18px;
+  justify-content: space-around;
 }
 
 .uploadPhoto {
   display: flex;
-  width: 65%;
+  width: 82%;
   height: 20rem;
   justify-content: space-evenly;
   align-items: center;
@@ -53,21 +52,26 @@
   padding: 16px 60px;
   gap: 10px;
   outline: none;
-  cursor: pointer;
-  z-index: 9;
 }
 
-.laptopName {
+.laptopName,
+.laptopRam {
   width: 380px;
 }
-.mainLaptName {
+.mainLaptName,
+.LaptopRam,
+.core {
   display: flex;
   flex-direction: column;
+  height: 6.5rem;
+  padding: 5px;
+  justify-content: space-between;
 }
 
-.nameBrand {
+.nameBrand,
+.datePrice {
   display: flex;
-  width: 65%;
+  width: 82%;
   justify-content: space-between;
   align-items: center;
 }
@@ -79,20 +83,24 @@
   outline: none;
   border: none;
 }
-
+.hide {
+  color: white;
+}
 .mainCPU {
   display: flex;
   align-items: center;
-  width: 65%;
+  width: 82%;
   justify-content: space-between;
+  flex-wrap: wrap;
+  height: 18rem;
 }
 .line1 {
-  border: 1px solid green;
-  width: 65%;
+  border: 1px solid #a5c0ce;
+  width: 82%;
 }
 
 .coreInput {
-  width: 250px;
+  width: 230px;
 }
 
 .core {
@@ -112,4 +120,80 @@
 label span {
   font-weight: bold;
   font-size: 0.9rem;
+}
+
+text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #2e2e2e;
+}
+
+.mainCheckbox {
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  height: 6rem;
+}
+
+.checkboxes {
+  margin-top: 20px;
+}
+.checkboxes span {
+  margin-left: 10px;
+}
+.hdd {
+  margin-left: 40px;
+}
+.hdd,
+.ssd {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid #4d9ac3;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.hdd:checked,
+.ssd:checked {
+  background-color: #4d9ac3;
+}
+
+.mainCheckbox2 {
+  margin-left: 0;
+  width: 100%;
+}
+
+.datePrice {
+  flex-wrap: wrap;
+  height: 18rem;
+}
+
+.mainCheckbox2 p {
+  font-weight: bold;
+}
+
+.finalbuttons {
+  width: 82%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.saveBtn {
+  width: 219px;
+}
+
+.backBtn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 45px;
+  color: #62a1eb;
+  font-size: 18px;
+}
+.backBtn:hover {
+  background: none;
 }

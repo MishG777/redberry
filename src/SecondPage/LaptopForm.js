@@ -4,7 +4,7 @@ import Input from "../UI/Input";
 
 import classes from "../SecondPage/LaptopForm.module.css";
 
-const LaptopForm = () => {
+const LaptopForm = (props) => {
   const symbols = "${!@#$%^&*()_+=";
 
   return (
@@ -36,16 +36,76 @@ const LaptopForm = () => {
           <option value="1">intel</option>
         </select>
 
-        <label htmlFor="name" className={classes.core}>
+        <label className={classes.core}>
           <span>CPU-ს ბირთვი</span>
-          <Input type="text" placeholder="14" className={classes.coreInput} />
+          <Input type="number" placeholder="14" className={classes.coreInput} />
           <text>მხოლოდ ციფრები</text>
         </label>
-        <label htmlFor="name" className={classes.core}>
+        <label className={classes.core}>
           <span>CPU-ს ნაკადი</span>
-          <Input type="text" placeholder="365" className={classes.coreInput} />
+          <Input
+            type="number"
+            placeholder="365"
+            className={classes.coreInput}
+          />
           <text>მხოლოდ ციფრები</text>
         </label>
+
+        <label className={classes.LaptopRam}>
+          <span>ლეპტოპის RAM (GB) </span>
+          <Input type="number" placeholder="16" className={classes.laptopRam} />
+          <text>მხოლოდ ციფრები</text>
+        </label>
+
+        <div className={classes.mainCheckbox}>
+          <span>მეხსიერების ტიპი</span>
+          <div className={classes.checkboxes}>
+            <input type="checkbox" className={classes.ssd} />
+            <span>SSD</span>
+            <input type="checkbox" className={classes.hdd} />
+            <span>HDD</span>
+          </div>
+        </div>
+      </div>
+
+      <div className={classes.line1}></div>
+
+      <div className={classes.datePrice}>
+        <label className={classes.LaptopRam}>
+          <span>შეძენის რიცხვი (არჩევითი)</span>
+          <Input
+            type="date"
+            placeholder="დდ / თთ / წწწწ"
+            className={classes.laptopRam}
+          />
+          <text className={classes.hide}>მხოლოდ ციფრები</text>
+        </label>
+        <label className={classes.LaptopRam}>
+          <span>ლეპტოპის ფასი</span>
+          <Input
+            type="number"
+            placeholder="0000"
+            className={classes.laptopRam}
+          />
+          <text>მხოლოდ ციფრები</text>
+        </label>
+
+        <div className={classes.mainCheckbox2}>
+          <p>ლეპტოპის მდგომარეობა</p>
+          <div className={classes.checkboxes}>
+            <input type="checkbox" className={classes.ssd} />
+            <span>ახალი</span>
+            <input type="checkbox" className={classes.hdd} />
+            <span>მეორადი</span>
+          </div>
+        </div>
+      </div>
+
+      <div className={classes.finalbuttons}>
+        <Button className={classes.backBtn} onClick={props.forBackButton}>
+          უკან
+        </Button>
+        <Button className={classes.saveBtn}>დამახსოვრება</Button>
       </div>
     </form>
   );
