@@ -1,47 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import classes from "./UserForm.module.css";
 
 const UserForm = (props) => {
-  const [selectedTeam, setselectedTeam] = useState(null);
-  const [selectedPosition, setSelectedPosition] = useState(null);
-
   const [enteredName, setEnteredName] = useState("");
-  const [usersInfoState, setUsersInfoState] = useState([]);
+  // const [usersInfoState, setUsersInfoState] = useState([]);
 
-  const chooseTeam = (e) => {
-    setselectedTeam(e.target.value);
-  };
-
-  const choosePosition = (e) => {
-    setSelectedPosition(e.target.value);
-  };
+  const chooseTeam = useRef();
 
   const nameChangeHandler = (e) => {
     setEnteredName(e.target.value);
   };
+
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("start save");
-
-    const allUserInfoObj = {
-      name: enteredName,
-    };
 
     console.log(enteredName);
+    console.log(chooseTeam.current.value);
   };
 
   return (
     <form className={classes.mainForm} onSubmit={submitHandler}>
       <div className={classes.nameSurname}>
-        <label htmlFor="name" className={classes.nmsr}>
+        <label className={classes.nmsr}>
           <span>სახელი</span>
           <Input type="text" placeholder="გრიშა" onChange={nameChangeHandler} />
           <text>მინიმუმ 2 სიმბოლო, ქართული ასოები</text>
         </label>
 
-        <label htmlFor="surname" className={classes.nmsr}>
+        <label className={classes.nmsr}>
           <span>გვარი</span>
           <Input type="text" placeholder="ბაგრატიონი" />
           <text>მინიმუმ 2 სიმბოლო, ქართული ასოები</text>
@@ -53,7 +41,7 @@ const UserForm = (props) => {
           className={classes.selectTheme}
           onClick={props.teamsFunc}
           id="select1"
-          onChange={chooseTeam}
+          ref={chooseTeam}
         >
           <option value="">თიმი</option>
           {props.teams.map((team) => {
@@ -64,9 +52,8 @@ const UserForm = (props) => {
             );
           })}
         </select>
-        <h2>{selectedTeam}</h2>
 
-        <select className={classes.selectTheme} onChange={choosePosition}>
+        <select className={classes.selectTheme} id="select1">
           <option value="">პოზიცია</option>
           {props.position.map((positionData) => {
             return (
@@ -76,7 +63,6 @@ const UserForm = (props) => {
             );
           })}
         </select>
-        <h2>{selectedPosition}</h2>
       </div>
 
       <label htmlFor="name" className={classes.mailNum}>
@@ -98,10 +84,12 @@ const UserForm = (props) => {
         />
         <text>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</text>
       </label>
-
-      <Button type="submit" className={classes.btn} onClick={props.compData}>
-        შემდეგი
-      </Button>
+      <div className={classes.nextBtn}>
+        <Button className={classes.btn}>
+          {/* onClick={props.compData}  */}
+          შემდეგი
+        </Button>
+      </div>
     </form>
   );
 };
