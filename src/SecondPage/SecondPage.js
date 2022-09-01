@@ -18,7 +18,7 @@ const SecondPage = (props) => {
   const aboutCompHandler = () => {
     setChange(true);
   };
-  // fetchapi------------------------------------------------
+  // fetchApi------------------------------------------------
   const fetchTeamsHandler = useCallback(async () => {
     setError(null);
     try {

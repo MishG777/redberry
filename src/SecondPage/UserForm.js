@@ -7,6 +7,9 @@ const UserForm = (props) => {
   const [selectedTeam, setselectedTeam] = useState(null);
   const [selectedPosition, setSelectedPosition] = useState(null);
 
+  const [enteredName, setEnteredName] = useState("");
+  const [usersInfoState, setUsersInfoState] = useState([]);
+
   const chooseTeam = (e) => {
     setselectedTeam(e.target.value);
   };
@@ -15,12 +18,26 @@ const UserForm = (props) => {
     setSelectedPosition(e.target.value);
   };
 
+  const nameChangeHandler = (e) => {
+    setEnteredName(e.target.value);
+  };
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("start save");
+
+    const allUserInfoObj = {
+      name: enteredName,
+    };
+
+    console.log(enteredName);
+  };
+
   return (
-    <form className={classes.mainForm}>
+    <form className={classes.mainForm} onSubmit={submitHandler}>
       <div className={classes.nameSurname}>
         <label htmlFor="name" className={classes.nmsr}>
           <span>სახელი</span>
-          <Input type="text" placeholder="გრიშა" />
+          <Input type="text" placeholder="გრიშა" onChange={nameChangeHandler} />
           <text>მინიმუმ 2 სიმბოლო, ქართული ასოები</text>
         </label>
 
@@ -81,11 +98,10 @@ const UserForm = (props) => {
         />
         <text>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</text>
       </label>
-      <div className={classes.nextBtn}>
-        <Button className={classes.btn} onClick={props.compData}>
-          შემდეგი
-        </Button>
-      </div>
+
+      <Button type="submit" className={classes.btn} onClick={props.compData}>
+        შემდეგი
+      </Button>
     </form>
   );
 };
