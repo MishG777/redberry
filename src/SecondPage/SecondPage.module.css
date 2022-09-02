@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .customerInfo {
@@ -18,7 +19,6 @@
   font-size: 15px;
   line-height: 24px;
   color: #232323;
-  cursor: pointer;
   background-color: white;
   background-color: #ebe4e4e5;
 }
@@ -27,7 +27,6 @@
   font-size: 15px;
   line-height: 24px;
   color: #232323;
-  cursor: pointer;
   background-color: white;
   background-color: #ebe4e4e5;
 }

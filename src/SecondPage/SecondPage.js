@@ -11,6 +11,8 @@ const SecondPage = (props) => {
   const [Position, setPosition] = useState([]);
   const [error, setError] = useState(null);
 
+  const [userDataState, setUserDataState] = useState([]);
+
   const switchHandler = () => {
     setChange((prev) => !prev);
   };
@@ -60,6 +62,12 @@ const SecondPage = (props) => {
 
   // fetchApi------------------------------------------------
 
+  const userData = (users) => {
+    setUserDataState(users);
+
+    console.log(userDataState);
+  };
+
   return (
     <div className={classes.mainBackground}>
       <Button
@@ -71,16 +79,14 @@ const SecondPage = (props) => {
       </Button>
 
       <div className={classes.choosebar}>
-        <div className={classes.innerChoose}>
+        <div className={classes.innerChoose} onClick={switchHandler}>
           <text
             className={!change ? classes.customerInfo : classes.customerInfo2}
-            onClick={switchHandler}
           >
             თანამშრომლების ინფო
           </text>
           <text
             className={change ? classes.customerInfo : classes.customerInfo2}
-            onClick={switchHandler}
           >
             ლეპტოპის მახასიათებლები
           </text>
@@ -95,6 +101,7 @@ const SecondPage = (props) => {
           teamsFunc={fetchTeamsHandler}
           teams={teams}
           position={Position}
+          gotUserData={userData}
         />
       )}
       {change && <LaptopForm forBackButton={switchHandler} />}

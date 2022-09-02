@@ -25,7 +25,7 @@ function App() {
   return (
     <React.Fragment>
       {!data && <Firstpage getNextPageData={nextPage} />}
-      {data && <SecondPage prevPageData={PreviousPage} data={data} />}
+      {data && <SecondPage prevPageData={PreviousPage} />}
     </React.Fragment>
   );
 }
