@@ -45,13 +45,9 @@ const UserForm = (props) => {
       number: enteredNumber,
     };
 
+    console.log(fullUserData);
+
     props.gotUserData(fullUserData);
-    // console.log(enteredName);
-    // console.log(enteredSurName);
-    // console.log(enteredTeam);
-    // console.log(enteredPosition);
-    // console.log(enteredEmail);
-    // console.log(enteredNumber);
   };
 
   return (
@@ -133,7 +129,7 @@ const UserForm = (props) => {
       </label>
       <div className={classes.nextBtn}>
         <Button type="submit" className={classes.btn}>
-          {/* onClick={props.compData}  */}
+          {/* onClick={props.compData} */}
           შემდეგი
         </Button>
       </div>

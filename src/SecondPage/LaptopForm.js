@@ -5,12 +5,21 @@ import Input from "../UI/Input";
 import classes from "../SecondPage/LaptopForm.module.css";
 
 const LaptopForm = (props) => {
+  // const [enteredPhoto, setEnteredPhoto] = useState();
+
   const symbols = "${!@#$%^&*()_+=";
+
+  // const photoChangeHandler = (e) => {
+  //   setEnteredPhoto(e);
+  //   console.log(enteredPhoto);
+  // };
+
+  console.log(props.mainUserData);
 
   return (
     <form className={classes.mainForm}>
-      <label htmlFor="file-upload" className={classes.uploadPhoto}>
-        <input type="file" multiple />
+      <label className={classes.uploadPhoto}>
+        <input type="file" />
         <p>Drag your files here or click in this area.</p>
         <Button type="submit">ატვირთე</Button>
       </label>

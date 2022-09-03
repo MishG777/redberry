@@ -65,7 +65,7 @@ const SecondPage = (props) => {
   const userData = (users) => {
     setUserDataState(users);
 
-    console.log(userDataState);
+    // console.log(userDataState);
   };
 
   return (
@@ -104,7 +104,12 @@ const SecondPage = (props) => {
           gotUserData={userData}
         />
       )}
-      {change && <LaptopForm forBackButton={switchHandler} />}
+      {change && (
+        <LaptopForm
+          forBackButton={switchHandler}
+          mainUserData={userDataState}
+        />
+      )}
       <section>{error}</section>
     </div>
   );
