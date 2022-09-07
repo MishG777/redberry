@@ -11,7 +11,7 @@ const SecondPage = (props) => {
   const [Position, setPosition] = useState([]);
   const [error, setError] = useState(null);
 
-  const [userDataState, setUserDataState] = useState([]);
+  // const [userDataState, setUserDataState] = useState([]);
 
   const switchHandler = () => {
     setChange((prev) => !prev);
@@ -62,11 +62,11 @@ const SecondPage = (props) => {
 
   // fetchApi------------------------------------------------
 
-  const userData = (users) => {
-    setUserDataState(users);
+  // const userData = (users) => {
+  //   setUserDataState(users);
 
-    // console.log(userDataState);
-  };
+  //   console.log(userDataState);
+  // };
 
   return (
     <div className={classes.mainBackground}>
@@ -101,13 +101,13 @@ const SecondPage = (props) => {
           teamsFunc={fetchTeamsHandler}
           teams={teams}
           position={Position}
-          gotUserData={userData}
+          // gotUserData={userData}
         />
       )}
       {change && (
         <LaptopForm
           forBackButton={switchHandler}
-          mainUserData={userDataState}
+          // mainUserData={userDataState}
         />
       )}
       <section>{error}</section>

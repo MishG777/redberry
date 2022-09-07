@@ -11,8 +11,6 @@ const UserForm = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredNumber, setEnteredNumber] = useState("");
 
-  // const [usersInfoState, setUsersInfoState] = useState([]);
-
   const nameChangeHandler = (e) => {
     setEnteredName(e.target.value);
   };
@@ -45,9 +43,9 @@ const UserForm = (props) => {
       number: enteredNumber,
     };
 
-    console.log(fullUserData);
+    console.log(fullUserData); //ar gamoaqvs consoleshi
 
-    props.gotUserData(fullUserData);
+    // props.gotUserData(fullUserData);
   };
 
   return (
@@ -56,7 +54,7 @@ const UserForm = (props) => {
         {/* name-------------------------- */}
         <div className={classes.nmsr}>
           <span>სახელი</span>
-          <Input placeholder="გრიშა" onChange={nameChangeHandler} />
+          <Input type="text" placeholder="გრიშა" onChange={nameChangeHandler} />
           <text>მინიმუმ 2 სიმბოლო, ქართული ასოები</text>
         </div>
 
